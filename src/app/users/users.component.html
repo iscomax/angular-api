@@ -1,0 +1,27 @@
+<ul class="users">
+  <li *ngFor="let user of users">
+      <p>{{user._id}}</p>
+      <p>{{user.username}}</p>
+      <p>{{user.first_name}}</p>
+      <p>{{user.last_name}}</p>
+  </li>
+</ul>
+
+
+<form>
+  <div class="form-row">
+
+    <div class="col-md-5">
+      <input type="text" name="username" id="username" [(ngModel)]="newUser.username" placeholder="Username" class="form-control">
+    </div>
+    <div class="col-md-5">
+      <input type="text" name="first_name" id="first_name" [(ngModel)]="newUser.first_name" placeholder="First name" class="form-control">
+    </div>
+    <div class="col-md-5">
+      <input type="text" name="last_name" id="last_name" [(ngModel)]="newUser.last_name" placeholder="Last name" class="form-control">
+    </div>
+    <div class="col-md-2">
+      <button type="submit" class="btn btn-primary" (click)="createUser()">Crear</button>
+    </div>
+  </div>
+</form>
