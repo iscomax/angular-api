@@ -1,3 +1,31 @@
-<p>
-  tasks works!
-</p>
+<ul>
+<li *ngFor="let task of tasks">
+    <p>{{task._id}}</p>
+    <p>{{task.title}}</p>
+    <p>{{task.description}}</p>
+    
+</li>
+</ul>
+
+
+<form>
+    <div class="form-row">
+        <div class="col-md-5">
+            <input type="text" name="username" id="username" [(ngModel)]="newTask.username" placeholder="Username" class="form-control">
+          </div>
+          <div class="col-md-5">
+            <input type="text" name="title" id="title" [(ngModel)]="newTask.title" placeholder="title" class="form-control">
+          </div>
+          <div class="col-md-5">
+            <input type="text" name="description" id="description" [(ngModel)]="newTask.description" placeholder="description" class="form-control">
+          </div>
+          <div class="col-md-2">
+            <button type="submit" class="btn btn-primary" (click)="updateUser()">Actualizar</button>
+          </div>
+          <div class="col-md-2">
+              <button type="submit" class="btn btn-primary" (click)="deleteUser()">Eliminar</button>
+            </div>
+        </div>
+    
+
+</form>
