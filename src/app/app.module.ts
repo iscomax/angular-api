@@ -15,7 +15,8 @@ import { TaskDetailComponent } from './task-detail/task-detail.component';
 
 
 import { UserService } from './user.service';
-import { AppRoutingModule } from './/app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
+import { TaskService } from './task.service';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { AppRoutingModule } from './/app-routing.module';
     AppRoutingModule
   ],
   providers: [
-    UserService
+    UserService,
+    TaskService
   ],
   bootstrap: [AppComponent]
 })
