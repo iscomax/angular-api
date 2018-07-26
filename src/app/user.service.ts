@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 
-import { Observable } from 'rxjs';
+import { Observable, observable } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
 
@@ -35,14 +35,27 @@ export class UserService {
 
     getUser(id: string ): Observable<User> {
     const url = `${this.usersUrl}/${id}`;
-    return this.http.get<User>(url);  
+    return this.http.get<User>(url);} 
+    
+    
+    updateUser(id: String, user: User): Observable<any> {
+      const url = `${this.usersUrl}/${id}`;
+      return this.http.put(url, user, httpOptions); 
+    }
+
+    deleteUser (id: String): Observable<User> {
+      const url = `${this.usersUrl}/${id}`;
+      return this.http.delete<User>(url, httpOptions); 
+    }
+
+
 }
 
 
 
 
 
-}
+
 
 
 
